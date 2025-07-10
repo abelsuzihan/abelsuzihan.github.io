@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Loading...</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="common-header" class="placeholder-header"></div>
+<div id="main">
+    <h1 id="project-title">Loading...</h1>
+    <p class="tag-detail" id="project-category">Loading...</p>
+<!-- blockbeats -->
+  <h2>blockbeats</h2>
+    <img src="../images/web3-bb-logo-1.png"/>
+      <p>Design is more than<br/> what you see</p>
+    <img src="../images/web3-bb-logo-2.png" class="img-size-m"/>
+      <p>Design is more than<br/> what you see</p>
+    <div class="two-columns">
+      <img src="../images/web3-bb-ui-1.jpg" class="lightbox-img"/>
+      <p>Design is more than<br/> what you see</p>
+      <p>Design is more than<br/> what you see</p>
+      <img src="../images/web3-bb-ui-2.jpg" class="lightbox-img"/>
+      <img src="../images/web3-bb-nyc.jpg" class="lightbox-img"/>
+      <p>Design is more than<br/> what you see</p>
+    </div>
+  <p><br/></p>
+<!-- tranchess -->
+<div class="divider"></div>
+  <p><br/></p>
+  <h2>tranchess</h2>
+    <img src="../images/web3-tc-logo.png"/>
+      <p>Design is more than<br/> what you see</p>
+    <div class="two-columns">
+      <p>Design is more than<br/> what you see</p>
+      <img src="../images/web3-tc-ui-1.jpg" class="lightbox-img"/>
+      <img src="../images/web3-tc-ui-2.jpg" class="lightbox-img"/>
+      <p>Design is more than<br/> what you see</p>
+      <p>Design is more than<br/> what you see</p>
+    <img src="../images/web3-tc-chess.png"/>
+    </div>
+    <img src="../images/web3-tc-nft.jpg"/>
+      <p>Design is more than<br/> what you see</p>
+  <p><br/></p>
+<!-- symmtry -->
+<div class="divider"></div>
+  <p><br/></p>
+  <h2>symmtry</h2>
+    <img src="../images/web3-sym-logo.jpg"/>
+      <p>Design is more than<br/> what you see</p>
+    <div class="two-columns">
+      <img src="../images/web3-sym-web.jpg"/>
+      <p>Design is more than<br/> what you see</p>
+      <p>Design is more than<br/> what you see</p>
+      <img src="../images/web3-sym-ui.jpg"/>
+    </div>
+  <p><br/></p>
+<!-- snarkify -->
+<div class="divider"></div>
+  <p><br/></p>
+  <h2>snarkify</h2>
+    <img src="../images/web3-sn-logo.png" class="img-size-s"/>
+      <p>Design is more than<br/> what you see</p>
+    <img src="../images/web3-sn-logo-2.png"/>
+      <p>Design is more than<br/> what you see</p>
+    <img src="../images/web3-sn-ui-1.png" class="img-size-m"/>
+      <p>Design is more than<br/> what you see</p>
+    <img src="../images/web3-sn-ui-2.png"/>
+      <p>Design is more than<br/> what you see</p>
+    <img src="../images/web3-sn-key.png"/>
+      <p>Design is more than<br/> what you see</p>
+  <p><br/></p>
+<!-- other -->
+<div class="divider"></div>
+  <p><br/></p>
+  <h2>Tudou: Web & App Design</h2>
+    <div class="two-columns">
+      <img src="../images/web3-lightyear.jpg" class="lightbox-img"/>
+      <p>Design is more than<br/> what you see</p>
+      <p>Design is more than<br/> what you see</p>
+      <img src="../images/web3-metapoker.jpg" class="lightbox-img"/>
+    </div>
+</div>
+<div id="footer">2025 © ABEL SU<br/><a href="#"><img src="../favicon.png"/></a></div>
+<!-- lightbox -->
+<div id="lightbox-overlay">
+  <span id="lightbox-close">&times;</span>
+  <img src="" alt="Lightbox Image">
+</div><script src="../lightbox.js"></script>
+<!-- lightbox -->
+  <script>
+    // 加载 header
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('common-header').innerHTML = html;
+      });
+  </script>
+  <script src="../detail.js"></script>
+</body>
+</html>

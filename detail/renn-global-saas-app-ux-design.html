@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Loading...</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="common-header" class="placeholder-header"></div>
+<div id="main">
+    <h1 id="project-title">Loading...</h1>
+    <p class="tag-detail" id="project-category">Loading...</p>
+      <img src="../images/rr-ui-2.jpg"/>
+      <p>Design is more than<br/> what you see</p>
+    <img src="../images/rr-cover.jpg" class="img-size-m"/>
+      <p>Design is more than<br/> what you see</p>
+      <img src="../images/rr-ui-3.jpg"/>
+      <p>Design is more than<br/> what you see</p>
+      <img src="../images/rr-ui-4.jpg"/>
+      <p>Design is more than<br/> what you see</p>
+      <img src="../images/rr-apps.jpg" class="img-size-s"/>
+      <img src="../images/rr-ui-1.jpg"/>
+      <p>Design is more than<br/> what you see</p>
+    <div class="two-columns">
+      <img src="../images/rr-ui-s-1.jpg" class="lightbox-img"/>
+      <p>Design is more than<br/> what you see</p>
+      <p>Design is more than<br/> what you see</p>
+      <img src="../images/rr-ui-s-2.jpg" class="lightbox-img"/>
+    </div>
+    <img src="../images/rr-ui-0.jpg" class="img-size-m"/>
+      <p>Design is more than<br/> what you see</p>
+</div>
+<div id="footer">2025 © ABEL SU<br/><a href="#"><img src="../favicon.png"/></a></div>
+<!-- lightbox -->
+<div id="lightbox-overlay">
+  <span id="lightbox-close">&times;</span>
+  <img src="" alt="Lightbox Image">
+</div><script src="../lightbox.js"></script>
+<!-- lightbox -->
+  <script>
+    // 加载 header
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('common-header').innerHTML = html;
+      });
+  </script>
+  <script src="../detail.js"></script>
+</body>
+</html>

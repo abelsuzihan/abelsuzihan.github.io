@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Loading...</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="common-header" class="placeholder-header"></div>
+<div id="main">
+    <h1 id="project-title">Loading...</h1>
+    <p class="tag-detail" id="project-category">Loading...</p>
+    <p class="center">Design is more than what you see — it’s a silent language that <a href="../about.html">speaks to your emotions</a>. It’s the art of turning ordinary ideas into <em>extraordinary</em> experiences. Every curve, every color, every detail is a chance to tell a story and connect with the world in a meaningful way.
+    </p> 
+    <p>As a designer, I believe creativity is not just a skill — it’s a way of <a href="../about.html">seeing the world differently</a>. It’s about finding beauty in unexpected places and transforming thoughts into visual poetry. Every project is a journey, and every journey begins with curiosity.
+    </p>
+    <img src="../images/cider-styles.jpg"/>
+    <p>Good design is not only about aesthetics; it’s about <a href="../about.html">creating a seamless experience</a> that feels natural, intuitive, and delightful. Whether it’s a brand identity, a digital interface, or an experimental concept, the goal remains the same: to make people feel something real.
+            <br/><br/><span class="footnote">Design is where logic meets magic. It’s where ideas become reality, and where stories come to life through color, shape, and motion.</span>
+            <br/><br/>
+    <h1>title here h1</h1> 
+    <h2>title here h2</h2> 
+    <h3>title here h3</h3> 
+    </p>
+
+<div class="divider"></div>
+
+    <div class="two-columns">
+        <img src="../images/cider-styles.jpg"/>
+        <p>Design is more than what you see — it’s a silent language that <a href="../about.html">speaks to your emotions</a>. It’s the art of turning ordinary ideas into extraordinary experiences. Every curve, every color, every detail is a chance to tell a story and connect with the world in a meaningful way.
+    </p>
+    </div>
+    <div class="two-columns">
+        <p>Good design is not only about aesthetics; it’s about <a href="../about.html">creating a seamless experience</a> that feels natural, intuitive, and delightful. Whether it’s a brand identity, a digital interface, or an experimental concept, the goal remains the same: to make people feel something real.
+            <br/><br/><span class="footnote">Design is where logic meets magic. It’s where ideas become reality, and where stories come to life through color, shape, and motion.</span>
+    </p>
+    <img src="../images/cider-styles.jpg"/>
+    </div>    <div class="two-columns">
+        <img src="../images/02.png"/>
+        <p>This space is a <a href="../about.html">canvas in progress</a>. Just like design itself, it’s always evolving, iterating, and striving for better. Stay tuned as I shape this digital space into a reflection of my vision and passion.
+    </p>
+    </div>
+    <div class="two-columns">
+        <p>Good design is not only about aesthetics; it’s about <a href="../about.html">creating a seamless experience</a> that feels natural, intuitive, and delightful. Whether it’s a brand identity, a digital interface, or an experimental concept, the goal remains the same: to make people feel something real.
+    </p>
+    <img src="../images/cider-ui-3.jpg"/>
+    </div>
+    <img src="../images/cider-styles.jpg"/>
+    <img src="../images/cider-news.jpg" class="img-size-s"/>
+    <p>As a designer, I believe creativity is not just a skill — it’s a way of <a href="../about.html">seeing the world differently</a>. It’s about finding beauty in unexpected places and transforming thoughts into visual poetry. Every project is a journey, and every journey begins with curiosity.
+    </p>
+    <p class="footnote">This space is a <a href="../about.html">canvas in progress</a>. Just like design itself, it’s always evolving, iterating, and striving for better. Stay tuned as I shape this digital space into a reflection of my vision and passion.
+    </p>
+</div>
+<div id="footer">2025 © ABEL SU<br/><a href="#"><img src="../favicon.png"/></a></div>
+  <script>
+    // 加载 header
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('common-header').innerHTML = html;
+      });
+  </script>
+  <script src="../detail.js"></script>
+</body>
+</html>
