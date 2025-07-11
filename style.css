@@ -7,7 +7,7 @@ body {
   text-align: center;
   font-size: 12px;
   color:#000;
-  font-weight: 300;
+  /* font-weight: 300; */
 }
 a, a:visited {
   color:#000;
@@ -24,6 +24,9 @@ h2{
 h3{
   margin:24px 0 12px 0;
   font-size: 1.75em;
+}
+b {
+  font-weight: 600;
 }
 #header{
   padding: 48px 0 0 0;
@@ -104,15 +107,6 @@ h3{
   font-weight: 500;
   text-transform: uppercase;
 }
-
-.tag-detail{
-  text-align: center !important;
-  font-size: 1em !important;
-  color:#999;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
 .item-text .title{
   padding: 0;
   font-size: 1.5em;
@@ -144,13 +138,14 @@ h3{
   text-decoration: underline;
 }
 #main p{
-  margin:24px auto 24px auto;
-  max-width: 1200px;
+  margin:48px auto 48px auto;
+  max-width: 800px;
+  text-align: left;
   font-size: 1.25em;
 }
 #main ul{
   margin:24px auto 24px auto;
-  max-width: 1200px;
+  max-width: 800px;
   padding-left: 16px;
   font-size: 1.25em;
   text-align: left;
@@ -196,6 +191,7 @@ h3{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
+  align-items: center;
 }
 .two-columns p{
   text-align: left;
@@ -205,7 +201,14 @@ h3{
   max-height: 720px;
   object-fit: contain;
 }
-
+.tag-detail{
+  text-align: center !important;
+  font-size: 1em !important;
+  margin: 24px auto 24px auto !important;
+  color:#999;
+  font-weight: 500;
+  text-transform: uppercase;
+}
 /* responsive */
 
 @media (max-width: 1248px) {
@@ -223,6 +226,9 @@ h3{
   }
   #main{
     margin:4px 12px 48px 12px;
+  }
+  #main p{
+    margin:24px auto 24px auto;
   }
 }
 @media (max-width: 500px) {

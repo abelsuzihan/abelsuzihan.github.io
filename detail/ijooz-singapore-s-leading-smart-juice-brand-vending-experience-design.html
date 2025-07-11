@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Loading...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="common-header" class="placeholder-header"></div>
+<div id="main">
+    <h1 id="project-title">Loading...</h1>
+    <p class="tag-detail" id="project-category">Loading...</p>
+    <img src="../images/ij-logo.png"/>
+      <p><b>Role:</b> Brand & UI/UX Designer<br/><br/>Founded in 2016 in Singapore, <b>IJOOZ</b> is a pioneering IoT technology company specializing in smart vending solutions. The company's flagship product is a vending machine that dispenses freshly squeezed orange juice, using four whole oranges per serving without any added sugar, water, or preservatives. As of 2023, IJOOZ has expanded its presence to over 33 countries, including a significant footprint in Japan, where it operates more than 400 machines.</p>
+    <div class="two-columns">
+      <img src="../images/ij-s-1.jpg"/>
+      <p>In 2020, I collaborated with IJOOZ to revamp its brand identity and user experience. The initial challenge was the inconsistency in machine designs across different regions, which diluted brand recognition and consumer trust.</p>
+      <p>To address this, I developed a cohesive visual identity, including a new logo, brand elements, and a friendly mascot character. These elements were applied uniformly across all machines, ensuring a consistent and appealing brand presence.</p>
+      <img src="../images/ij-s-2.jpg"/>
+    </div>
+<div class="divider"></div>
+    <h2>#FreshEasy For Everyone</h2>
+    <img src="../images/ij-character.png" class="img-size-s"/>
+      <p>Understanding the importance of user interaction, I also redesigned the machine's UI to be more intuitive and engaging. The updated interface features clear instructions, real-time feedback, and subtle animations to guide users through the purchasing process seamlessly. These enhancements led to a significant improvement in user engagement metrics: a 100% increase in successful transactions, a 50% reduction in transaction time, and a notable rise in positive user feedback.</p>
+    <img src="../images/ij-ui-2.png" class="img-size-m"/>
+      <p>Beyond the vending machines, IJOOZ offers a mobile application that allows users to locate nearby machines, recharge their accounts, and participate in membership programs. This integration not only enhances user convenience but also opens avenues for corporate partnerships, enabling companies to provide IJOOZ credits as employee benefits.</p>
+    <img src="../images/ij-ui-1.png"/>
+      <p>To support its operations, I assisted in designing IJOOZ's backend systems, including sales analytics dashboards and machine maintenance monitoring tools. These systems empower the IJOOZ team to efficiently manage inventory, monitor machine performance, and make data-driven decisions to optimize operations.</p>
+    <img src="../images/ij-ui-3.png"/>
+      <p>IJOOZ's commitment to innovation and user-centric design has positioned it as a leader in the smart vending industry, transforming the way consumers access fresh, healthy beverages on the go.</p>
+</div>
+<div id="footer">2025 © ABEL SU<br/><a href="#"><img src="../favicon.png"/></a></div>
+  <script>
+    // 加载 header
+    fetch('header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('common-header').innerHTML = html;
+      });
+  </script>
+  <script src="../detail.js"></script>
+</body>
+</html>
