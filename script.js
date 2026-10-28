@@ -61,6 +61,13 @@ function applyFilter(filter) {
   });
 }
 
+function replayFilterTransition() {
+  const container = document.getElementById('container');
+  container.classList.remove('filter-transition');
+  void container.offsetWidth;
+  container.classList.add('filter-transition');
+}
+
 function initializeFilterNavigation() {
   document.querySelectorAll('#nav [data-filter]').forEach(link => {
     link.addEventListener('click', event => {
@@ -68,12 +75,14 @@ function initializeFilterNavigation() {
       const filter = projectFilters.has(link.dataset.filter) ? link.dataset.filter : 'all';
       normalizeFilterUrl(filter);
       applyFilter(filter);
+      replayFilterTransition();
     });
   });
 
   window.addEventListener('popstate', () => {
     const filter = readFilterFromUrl();
     applyFilter(filter);
+    replayFilterTransition();
 
     const rawFilter = new URLSearchParams(window.location.search).get('filter');
     if (rawFilter && !projectFilters.has(rawFilter)) normalizeFilterUrl('all', true);

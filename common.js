@@ -55,7 +55,7 @@ function setSharedNavigationState() {
 
 async function loadPartial(container, path) {
   try {
-    const response = await fetch(new URL(path, siteRootUrl));
+    const response = await fetch(resolveSitePath(path));
     if (!response.ok) throw new Error(`Unable to load ${path}`);
 
     container.innerHTML = await response.text();
