@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="common-header" class="placeholder-header"></div>
+<div data-site-include="header" class="placeholder-header"></div>
 <div id="main">
     <h1 id="project-title">Loading...</h1>
     <p class="tag-detail" id="project-category">Loading...</p>
@@ -37,15 +37,8 @@
     <img src="../images/ourden-collab.png" class="img-size-m"/>
     <p>Looking back, OURDEN emerged during a golden era when internet interest communities were thriving, and hip-hop culture in China had not yet been heavily commercialized or overly entertainment-driven. It was a time of genuine passion and pure resonance among true enthusiasts. OURDEN became a space where we shared music and stories purely out of love for the culture, without excessive compromise or commercial pressure. While OURDEN was still young and inexperienced in commercial development, we intentionally prioritized authenticity over profit. Many of our content team members were still students back then, and they have all gone on to build remarkable careers in different fields. I feel truly grateful and proud that we shared such a heartfelt journey together, united by a deep love for hip-hop.</p>
 </div>
-<div id="footer">2025 © ABEL SU<br/><a href="#"><img src="../favicon.png"/></a></div>
-  <script>
-    // 加载 header
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('common-header').innerHTML = html;
-      });
-  </script>
+<div data-site-include="footer"></div>
+  <script src="../common.js"></script>
   <script src="../detail.js"></script>
 </body>
 </html>

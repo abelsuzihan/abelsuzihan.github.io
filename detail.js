@@ -1,22 +1,53 @@
-const path = window.location.pathname;
-const fileName = path.substring(path.lastIndexOf("/") + 1);
+const detailPagePath = window.location.pathname;
+const detailFileName = detailPagePath.substring(detailPagePath.lastIndexOf('/') + 1);
+const detailDisplayNameMap = {
+  ux: 'UI&UX',
+};
 
-fetch('../projects.json')
-  .then(res => res.json())
-  .then(data => {
-    const project = data.find(item => item.link.endsWith(fileName));
-    if (project) {
-      document.title = project.title;
-      document.getElementById('project-title').textContent = project.title;
+function showDetailError(message) {
+  const title = document.getElementById('project-title');
+  const category = document.getElementById('project-category');
 
-      const rawCategories = project.category.split(',').map(c => c.trim());
-      const displayNames = rawCategories.map(cat => ({
-        ux: "UI&UX"
-      }[cat] || cat));
-      const displayText = displayNames.join(', ');
-      document.getElementById('project-category').textContent = displayText;
+  if (title) title.textContent = message;
+  if (category) category.textContent = '';
+}
 
-      document.getElementById('project-image').src = "../" + project.img;
-      document.getElementById('project-image').alt = project.title;
+async function loadProjectDetails() {
+  if (document.documentElement.dataset.template === 'project') return;
+
+  try {
+    const response = await fetch('../projects.json');
+    if (!response.ok) throw new Error('Unable to load projects.json');
+
+    const projects = await response.json();
+    const project = projects.find(item => item.link.endsWith(detailFileName));
+    if (!project) {
+      showDetailError('Project not found');
+      return;
     }
-  });
+
+    document.title = project.title;
+
+    const title = document.getElementById('project-title');
+    const category = document.getElementById('project-category');
+    const projectImage = document.getElementById('project-image');
+
+    if (title) title.textContent = project.title;
+    if (category) {
+      category.textContent = project.category
+        .split(',')
+        .map(value => value.trim())
+        .map(value => detailDisplayNameMap[value] || value)
+        .join(', ');
+    }
+    if (projectImage) {
+      projectImage.src = `../${project.img}`;
+      projectImage.alt = project.title;
+    }
+  } catch (error) {
+    console.error(error);
+    showDetailError('Project details could not be loaded');
+  }
+}
+
+loadProjectDetails();

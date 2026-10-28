@@ -59,7 +59,7 @@
 </script>
 </head>
 <body>
-<div id="common-header" class="placeholder-header"></div>
+<div data-site-include="header" class="placeholder-header"></div>
 <div id="main">
 <h1>用户体验与品牌设计专家 ｜ 跨国团队管理与创新经验</h1>
 <p class="center">苏子涵 Abel Su</p>
@@ -193,14 +193,7 @@
     <a href="en.html" target="_self">English Version</a>
 </div>
 </div>
-<div id="footer">2025 © ABEL SU<br/><a href="#"><img src="../favicon.png"/></a></div>
-  <script>
-    // 加载 header
-    fetch('../detail/header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('common-header').innerHTML = html;
-      });
-  </script>
+<div data-site-include="footer"></div>
+  <script src="../common.js"></script>
 </body>
 </html>

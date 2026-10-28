@@ -1,97 +1,106 @@
-// 别名映射
 const filterDisplayNameMap = {
-  ux: "UI&UX",
+  ux: 'UI&UX',
 };
 
-// 解析 URL 参数
-function getQueryParam(name) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(name);
+const projectFilters = new Set(['all', 'ux', 'branding']);
+
+function readFilterFromUrl() {
+  const filter = new URLSearchParams(window.location.search).get('filter');
+  return projectFilters.has(filter) ? filter : 'all';
 }
 
-fetch('projects.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById('container');
-    const buttons = document.querySelectorAll('#nav button');
+function normalizeFilterUrl(filter, replace = false) {
+  const url = new URL(window.location.href);
 
-    // 渲染所有项目
-    data.forEach(project => {
-      const item = document.createElement('a');
-      item.href = project.link;
-      item.className = 'select-item';
-      item.setAttribute('data-category', project.category);
+  if (filter === 'all') {
+    url.searchParams.delete('filter');
+  } else {
+    url.searchParams.set('filter', filter);
+  }
 
-      // 解析并映射别名
-      const rawCategories = project.category.split(',').map(c => c.trim());
-      const displayNames = rawCategories.map(cat => filterDisplayNameMap[cat] || cat);
-      const displayText = displayNames.join(', ');
+  const method = replace ? 'replaceState' : 'pushState';
+  window.history[method]({}, '', `${url.pathname}${url.search}${url.hash}`);
+}
 
-      item.innerHTML = `
-        <img src="${project.img}" alt="${project.title}">
-        <div class="item-text">
-          <p class="tag">${displayText}</p>
-          <p class="title">${project.title}</p>
-        </div>
-      `;
-      container.appendChild(item);
-    });
+function normalizeInitialFilterUrl() {
+  const filter = new URLSearchParams(window.location.search).get('filter');
+  if (filter === 'all' || (filter && !projectFilters.has(filter))) {
+    normalizeFilterUrl('all', true);
+  }
+}
 
-    // 获取初始筛选参数
-    const initialFilter = getQueryParam('filter');
+function renderProject(project) {
+  const item = document.createElement('a');
+  const categories = project.category.split(',').map(category => category.trim());
+  const displayNames = categories.map(category => filterDisplayNameMap[category] || category);
 
-    if (initialFilter) {
-      applyFilter(initialFilter);
-    } else {
-      // 显示所有 item
-      const items = document.querySelectorAll('#container .select-item');
-      items.forEach(item => item.style.display = "");
-    }
+  item.href = project.link;
+  item.className = 'select-item';
+  item.dataset.category = project.category;
+  item.innerHTML = `
+    <img src="${project.img}" alt="${project.title}">
+    <div class="item-text">
+      <p class="tag">${displayNames.join(', ')}</p>
+      <p class="title">${project.title}</p>
+    </div>
+  `;
 
-    // 添加按钮点击事件
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        applyFilter(filter);
+  return item;
+}
 
-        // 更新 URL
-        history.pushState({}, '', `?filter=${filter}`);
+function applyFilter(filter) {
+  const activeFilter = projectFilters.has(filter) ? filter : 'all';
 
-        // 更新按钮高亮
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-      });
-    });
+  document.querySelectorAll('#container .select-item').forEach(item => {
+    const categories = item.dataset.category.split(',').map(category => category.trim());
+    item.style.display = activeFilter === 'all' || categories.includes(activeFilter) ? '' : 'none';
+  });
 
-    // 支持多分类
-    function applyFilter(filter) {
-      const items = document.querySelectorAll('#container .select-item');
-      items.forEach(item => {
-        if (filter === 'all') {
-          item.style.display = "";
-        } else {
-          const categories = item.getAttribute('data-category').split(',').map(c => c.trim());
-          if (categories.includes(filter)) {
-            item.style.display = "";
-          } else {
-            item.style.display = "none";
-          }
-        }
-      });
+  document.querySelectorAll('#nav [data-filter]').forEach(link => {
+    link.classList.toggle('active', link.dataset.filter === activeFilter);
+  });
+}
 
-      // 自动高亮按钮
-      buttons.forEach(btn => {
-        if (btn.getAttribute('data-filter') === filter) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
-      });
-    }
-
-    // 浏览器后退/前进按钮监听
-    window.addEventListener('popstate', () => {
-      const newFilter = getQueryParam('filter') || 'all';
-      applyFilter(newFilter);
+function initializeFilterNavigation() {
+  document.querySelectorAll('#nav [data-filter]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const filter = projectFilters.has(link.dataset.filter) ? link.dataset.filter : 'all';
+      normalizeFilterUrl(filter);
+      applyFilter(filter);
     });
   });
+
+  window.addEventListener('popstate', () => {
+    const filter = readFilterFromUrl();
+    applyFilter(filter);
+
+    const rawFilter = new URLSearchParams(window.location.search).get('filter');
+    if (rawFilter && !projectFilters.has(rawFilter)) normalizeFilterUrl('all', true);
+  });
+}
+
+async function loadProjects() {
+  const container = document.getElementById('container');
+
+  try {
+    const response = await fetch('projects.json');
+    if (!response.ok) throw new Error('Unable to load projects.json');
+
+    const projects = await response.json();
+    projects.forEach(project => container.appendChild(renderProject(project)));
+
+    normalizeInitialFilterUrl();
+    initializeFilterNavigation();
+    applyFilter(readFilterFromUrl());
+  } catch (error) {
+    console.error(error);
+    container.innerHTML = '<p class="load-error">Projects could not be loaded. Please refresh and try again.</p>';
+  }
+}
+
+if (window.siteReady) {
+  window.siteReady.then(loadProjects);
+} else {
+  loadProjects();
+}

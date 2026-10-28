@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shrikhand&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="common-header" class="placeholder-header"></div>
+<div data-site-include="header" class="placeholder-header"></div>
 <div id="main">
     <h1 id="project-title">Loading...</h1>
     <p class="tag-detail" id="project-category">Loading...</p>
@@ -42,15 +42,8 @@
       <p>Proactively exploring new AI technology allows us to push beyond conventional brand and user experience design boundaries. Virtual try-on experiments, background replacement to cut costs, and pattern swaps to help designers visualize final looks early — all represent future-forward steps that would have been unimaginable just a few years ago.<br/><br/>
         This project solidified Cider’s reputation not just as a fashion brand, but as a platform driving innovation in UX and digital content for next-gen consumers.</p>
 </div>
-<div id="footer">2025 © ABEL SU<br/><a href="#"><img src="../favicon.png"/></a></div>
-  <script>
-    // 加载 header
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('common-header').innerHTML = html;
-      });
-  </script>
+<div data-site-include="footer"></div>
+  <script src="../common.js"></script>
   <script src="../detail.js"></script>
 </body>
 </html>
