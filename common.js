@@ -41,13 +41,11 @@ function getHomeFilter() {
 
 function setSharedNavigationState() {
   const pageType = getPageType();
-  const activeFilter = pageType === 'home' ? getHomeFilter() : 'all';
+  const activeFilter = pageType === 'home' ? getHomeFilter() : null;
 
   document.querySelectorAll('#nav a').forEach(link => {
     const isAbout = pageType === 'about' && link.dataset.page === 'about';
-    const isWorks = (pageType === 'home' || pageType === 'detail') &&
-      (link.dataset.filter === activeFilter ||
-        (pageType === 'detail' && link.dataset.filter === 'all'));
+    const isWorks = pageType === 'home' && link.dataset.filter === activeFilter;
 
     link.classList.toggle('active', isAbout || isWorks);
   });
