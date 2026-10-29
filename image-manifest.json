@@ -253,12 +253,12 @@
   },
   "images/cd-cart.png": {
     "original": "images/cd-cart.png",
-    "preview": "images/cd-cart.preview.png",
-    "webp": "images/cd-cart.webp",
+    "preview": null,
+    "webp": null,
     "width": 1600,
     "height": 400,
     "format": "png",
-    "ignored": false
+    "ignored": true
   },
   "images/cd-colors.png": {
     "original": "images/cd-colors.png",
@@ -343,12 +343,12 @@
   },
   "images/cd-logo.png": {
     "original": "images/cd-logo.png",
-    "preview": "images/cd-logo.preview.png",
-    "webp": "images/cd-logo.webp",
+    "preview": null,
+    "webp": null,
     "width": 1600,
     "height": 200,
     "format": "png",
-    "ignored": false
+    "ignored": true
   },
   "images/cd-news.jpg": {
     "original": "images/cd-news.jpg",
@@ -406,12 +406,12 @@
   },
   "images/ij-character.png": {
     "original": "images/ij-character.png",
-    "preview": "images/ij-character.preview.png",
-    "webp": "images/ij-character.webp",
+    "preview": null,
+    "webp": null,
     "width": 2400,
     "height": 492,
     "format": "png",
-    "ignored": false
+    "ignored": true
   },
   "images/ij-logo.png": {
     "original": "images/ij-logo.png",
@@ -514,12 +514,12 @@
   },
   "images/le-s-3.jpg": {
     "original": "images/le-s-3.jpg",
-    "preview": "images/le-s-3.preview.jpg",
-    "webp": "images/le-s-3.webp",
+    "preview": null,
+    "webp": null,
     "width": 1920,
     "height": 1920,
     "format": "jpg",
-    "ignored": false
+    "ignored": true
   },
   "images/le-s-4.jpg": {
     "original": "images/le-s-4.jpg",
@@ -622,12 +622,12 @@
   },
   "images/rr-apps.jpg": {
     "original": "images/rr-apps.jpg",
-    "preview": "images/rr-apps.preview.jpg",
-    "webp": "images/rr-apps.webp",
+    "preview": null,
+    "webp": null,
     "width": 1600,
     "height": 436,
     "format": "jpg",
-    "ignored": false
+    "ignored": true
   },
   "images/rr-cover.jpg": {
     "original": "images/rr-cover.jpg",
@@ -838,21 +838,21 @@
   },
   "images/web3-sn-logo-2.png": {
     "original": "images/web3-sn-logo-2.png",
-    "preview": "images/web3-sn-logo-2.preview.png",
-    "webp": "images/web3-sn-logo-2.webp",
+    "preview": null,
+    "webp": null,
     "width": 3840,
     "height": 1080,
     "format": "png",
-    "ignored": false
+    "ignored": true
   },
   "images/web3-sn-logo.png": {
     "original": "images/web3-sn-logo.png",
-    "preview": "images/web3-sn-logo.preview.png",
-    "webp": "images/web3-sn-logo.webp",
+    "preview": null,
+    "webp": null,
     "width": 2400,
     "height": 900,
     "format": "png",
-    "ignored": false
+    "ignored": true
   },
   "images/web3-sn-ui-1.png": {
     "original": "images/web3-sn-ui-1.png",
