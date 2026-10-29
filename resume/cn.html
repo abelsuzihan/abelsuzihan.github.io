@@ -46,16 +46,173 @@
     .two-columns{
         align-items: start !important;
     }
+    .contact-modal[hidden]{
+        display:none;
+    }
+    .contact-modal{
+        position:fixed;
+        inset:0;
+        z-index:1000;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:24px;
+        background:rgba(0,0,0,.28);
+        opacity:0;
+        transition:opacity .2s ease;
+        overflow:auto;
+    }
+    .contact-modal.is-open{
+        opacity:1;
+    }
+    .contact-modal-card{
+        position:relative;
+        width:min(100%, 360px);
+        box-sizing:border-box;
+        padding:44px 28px 36px;
+        border-radius:20px;
+        background:#fff;
+        color:#000;
+        box-shadow:0 16px 48px rgba(0,0,0,.14);
+        text-align:center;
+        transform:translateY(8px);
+        transition:transform .2s ease;
+    }
+    .contact-modal.is-open .contact-modal-card{
+        transform:translateY(0);
+    }
+    .contact-phone{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        margin-bottom:8px;
+        padding:12px 24px;
+        border:1px solid #eaeaea;
+        border-radius:999px;
+        background:#fafafa;
+        color:#000;
+        font-family: "Poppins", "Helvetica", sans-serif;
+        cursor:pointer;
+        letter-spacing: 4px;
+        transition:background .2s ease, border-color .2s ease;
+    }
+    .contact-phone:hover,
+    .contact-phone:focus-visible{
+        border-color:#e1e1e1;
+        background:#f1f1f1;
+        outline:none;
+    }
+    .contact-copy-status{
+        display:block;
+        height:16px;
+        margin:0 0 8px;
+        color:#999;
+        font-size:11px;
+    }
+    .contact-qr{
+        width:180px;
+        height:180px;
+        margin:0 auto 24px;
+    }
+    .contact-qr img{
+        display:block;
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+    .contact-modal-close{
+        position:absolute;
+        top:12px;
+        right:16px;
+        width:32px;
+        height:32px;
+        border:0;
+        background:transparent;
+        color:#999;
+        font-size:24px;
+        font-weight:200;
+        line-height:1;
+        cursor:pointer;
+    }
+    .contact-modal-close:hover,
+    .contact-modal-close:focus-visible{
+        color:#000;
+        outline:none;
+    }
+    @media (prefers-reduced-motion: reduce){
+        .contact-modal,
+        .contact-modal-card{
+            transition:none;
+        }
+    }
 </style>
 <script>
-    function copyText(text) {
-        navigator.clipboard.writeText(text)
-            .then(function() {
-                alert('已复制: ' + text);
-            })
-            .catch(function() {
-        });
+    const contactPhone = '18618162161';
+    let contactScrollY = 0;
+    let contactOverflow = '';
+
+    function copyPhone() {
+        const status = document.getElementById('contact-copy-status');
+        const showCopied = function() {
+            status.textContent = '已复制';
+            window.setTimeout(function() {
+                status.textContent = '';
+            }, 1800);
+        };
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(contactPhone).then(showCopied).catch(function() {});
+            return;
+        }
+
+        const textarea = document.createElement('textarea');
+        textarea.value = contactPhone;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            if (document.execCommand('copy')) showCopied();
+        } finally {
+            textarea.remove();
+        }
     }
+
+    function openContactModal(event) {
+        event.preventDefault();
+        const modal = document.getElementById('contact-modal');
+        contactScrollY = window.scrollY;
+        contactOverflow = document.body.style.overflow;
+
+        // body 有页面入场 transform；把弹窗提升到 html 下，确保 fixed 相对视口定位。
+        if (modal.parentNode !== document.documentElement) {
+            document.documentElement.appendChild(modal);
+        }
+
+        modal.hidden = false;
+        requestAnimationFrame(function() {
+            modal.classList.add('is-open');
+        });
+        document.body.style.overflow = 'hidden';
+        window.scrollTo(0, contactScrollY);
+        document.getElementById('contact-modal-close').focus({ preventScroll: true });
+    }
+
+    function closeContactModal() {
+        const modal = document.getElementById('contact-modal');
+        if (modal.hidden) return;
+        modal.classList.remove('is-open');
+        window.setTimeout(function() {
+            modal.hidden = true;
+            document.body.style.overflow = contactOverflow;
+            window.scrollTo(0, contactScrollY);
+        }, 200);
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') closeContactModal();
+    });
 </script>
 </head>
 <body>
@@ -64,7 +221,7 @@
 <h1>用户体验与品牌设计专家 ｜ 跨国团队管理与创新经验</h1>
 <p class="center">苏子涵 Abel Su</p>
 <div class="side-info">
-    <a href="javascript:void(0);" onclick="copyText('+86 18618162161')">手机&微信</a> | 
+    <a href="#contact-modal" onclick="openContactModal(event)">手机&微信</a> |
     <a href="mailto:abelsu12@icloud.com">abelsu12@icloud.com</a> | 
     <a href="苏子涵-简历.pdf" download>下载 PDF 文档</a> |
     <a href="en.html" target="_self">English Version</a>
@@ -187,11 +344,22 @@
     在校期间作品被收录于《NewWebPick》、《站酷志》等视觉设计杂志<br/><br/>
 </p>
 <div class="side-info">
-    <a href="javascript:void(0);" onclick="copyText('+86 18618162161')">手机&微信</a> | 
+    <a href="#contact-modal" onclick="openContactModal(event)">手机&微信</a> |
     <a href="mailto:abelsu12@icloud.com">abelsu12@icloud.com</a> | 
     <a href="苏子涵-简历.pdf" download>下载 PDF 文档</a> |
     <a href="en.html" target="_self">English Version</a>
 </div>
+</div>
+<div id="contact-modal" class="contact-modal" hidden onclick="if (event.target === this) closeContactModal()">
+    <div class="contact-modal-card" role="dialog" aria-modal="true">
+        <button id="contact-modal-close" class="contact-modal-close" type="button" aria-label="关闭" onclick="closeContactModal()">×</button>
+        <button class="contact-phone" type="button" onclick="copyPhone()">
+            <span>18618162161</span>
+            <span aria-hidden="true">⧉</span>
+        </button>
+        <span id="contact-copy-status" class="contact-copy-status" aria-live="polite"></span>
+        <div class="contact-qr"><img src="qrcode.png" alt=""></div>
+    </div>
 </div>
 <div data-site-include="footer"></div>
   <script src="../common.js"></script>
