@@ -42,7 +42,6 @@ async function loadProjectDetails() {
     }
     if (projectImage) {
       projectImage.src = `../${project.img}`;
-      projectImage.alt = project.title;
       if (window.enhanceImages) await window.enhanceImages(projectImage.parentElement || document);
     }
   } catch (error) {

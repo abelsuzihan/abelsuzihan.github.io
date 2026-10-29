@@ -38,7 +38,7 @@ function renderProject(project) {
   item.className = 'select-item';
   item.dataset.category = project.category;
   item.innerHTML = `
-    <img data-image-original="${project.img}" alt="${project.title}">
+    <img data-image-original="${project.img}">
     <div class="item-text">
       <p class="tag">${displayNames.join(', ')}</p>
       <p class="title">${project.title}</p>

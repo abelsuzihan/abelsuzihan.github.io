@@ -127,9 +127,15 @@ function enhanceImage(image, manifest, index) {
   image.loading = index < 2 ? 'eager' : 'lazy';
   image.decoding = 'async';
 
+  const markImageLoaded = () => {
+    image.dataset.imageState = 'loaded';
+    image.classList.add('image-loaded');
+  };
+
   const entry = getImageEntry(image, manifest);
   setImageDimensions(image, entry);
   if (!entry) {
+    image.addEventListener('load', markImageLoaded, { once: true });
     image.src = getOriginalImageUrl(declaredSource);
     return;
   }
@@ -144,10 +150,7 @@ function enhanceImage(image, manifest, index) {
   image.dataset.imageState = 'initial';
 
   if (!previewSource) {
-    image.addEventListener('load', () => {
-      image.dataset.imageState = 'loaded';
-      image.classList.add('image-loaded');
-    }, { once: true });
+    image.addEventListener('load', markImageLoaded, { once: true });
     image.addEventListener('error', () => {
       if (image.src === webpSource && originalSource !== webpSource) {
         image.dataset.imageFinalSrc = originalSource;
