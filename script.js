@@ -38,7 +38,7 @@ function renderProject(project) {
   item.className = 'select-item';
   item.dataset.category = project.category;
   item.innerHTML = `
-    <img src="${project.img}" alt="${project.title}">
+    <img data-image-original="${project.img}" alt="${project.title}">
     <div class="item-text">
       <p class="tag">${displayNames.join(', ')}</p>
       <p class="title">${project.title}</p>
@@ -98,6 +98,10 @@ async function loadProjects() {
 
     const projects = await response.json();
     projects.forEach(project => container.appendChild(renderProject(project)));
+
+    if (window.enhanceImages) {
+      await window.enhanceImages(container);
+    }
 
     normalizeInitialFilterUrl();
     initializeFilterNavigation();

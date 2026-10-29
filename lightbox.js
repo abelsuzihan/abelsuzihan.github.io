@@ -8,7 +8,12 @@ const enableLightbox = window.innerWidth > 600;
 if (enableLightbox) {
   document.querySelectorAll(".lightbox-img").forEach(img => {
     img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
+      if (window.promoteImage) window.promoteImage(img);
+      lightboxImg.src = img.dataset.imageFinalSrc || img.currentSrc || img.src || img.dataset.imageOriginal;
+      lightboxImg.onerror = () => {
+        const fallback = img.dataset.imageFallbackSrc || img.currentSrc || img.src || img.dataset.imageOriginal;
+        if (lightboxImg.src !== fallback) lightboxImg.src = fallback;
+      };
       overlay.style.display = "flex";
 
       // 强制触发 reflow 让动画生效

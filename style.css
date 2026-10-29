@@ -146,8 +146,22 @@ b {
 .select-item img{
   aspect-ratio: 1 / 1;
   width:100%;
+  height:auto !important;
+  display:block;
   background-color: #f1f1f1;
   object-fit: cover;
+}
+
+/* 图片优化：preview 存在时先显示低清图，高清图切换后恢复清晰度。 */
+#main img.image-previewing,
+#container img.image-previewing {
+  filter: blur(8px);
+  transition: filter 240ms ease;
+}
+
+#main img.image-loaded,
+#container img.image-loaded {
+  filter: blur(0);
 }
 
 .item-text{
@@ -223,6 +237,7 @@ b {
 }
 #main img{
   max-width:100%;
+  height:auto !important;
 }
 .img-size-m{
   width: 100%;

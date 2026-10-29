@@ -1,0 +1,15 @@
+# 在这里填写不需要生成 preview 和 WebP 的原图路径。
+# 路径相对于网站根目录，例如：
+# images/favicon.png
+# images/blank.png
+# images/web3-bb-logo-motion.gif
+#
+# 一行一个路径；以 # 开头的内容会被当作注释。
+images/cd-eye.gif
+images/cd-cart.png
+images/cd-logo.png
+images/rr-apps.jpg
+images/ij-character.png
+images/le-s-3.jpg
+images/web3-sn-logo.png
+images/web3-sn-logo-2.png
