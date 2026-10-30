@@ -71,6 +71,14 @@ async function removePreviousGeneratedFiles(previousManifest) {
   }
 }
 
+async function removeFileIfExists(filePath) {
+  try {
+    await fs.unlink(filePath);
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+}
+
 async function readPreviousManifest() {
   try {
     return JSON.parse(await fs.readFile(manifestPath, 'utf8'));
@@ -146,6 +154,7 @@ async function main() {
 
   const manifest = {};
   const sourceFiles = await collectSourceFiles(imagesDir);
+  let webpSkippedCount = 0;
 
   for (const sourceFile of sourceFiles) {
     const original = sitePath(sourceFile);
@@ -183,7 +192,18 @@ async function main() {
       }
 
       entry.preview = sitePath(previewFile);
-      entry.webp = sitePath(webpFile);
+
+      const [sourceStats, webpStats] = await Promise.all([
+        fs.stat(sourceFile),
+        fs.stat(webpFile),
+      ]);
+
+      if (webpStats.size < sourceStats.size) {
+        entry.webp = sitePath(webpFile);
+      } else {
+        await removeFileIfExists(webpFile);
+        webpSkippedCount++;
+      }
     }
 
     manifest[original] = entry;
@@ -199,6 +219,7 @@ async function main() {
 
   console.log(`图片扫描完成：${sourceFiles.length} 张原图`);
   console.log(`已生成 preview + WebP：${generatedCount} 张`);
+  console.log(`因 WebP 未小于原图而改用原图：${webpSkippedCount} 张`);
   console.log(`已忽略：${ignoredCount} 张`);
   console.log(`已自动更新 HTML 图片尺寸：${updatedHtmlCount} 处`);
   console.log(`清单已写入：${path.relative(rootDir, manifestPath)}`);

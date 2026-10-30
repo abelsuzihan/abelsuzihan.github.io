@@ -11,7 +11,7 @@
   "images/ab-clock.jpg": {
     "original": "images/ab-clock.jpg",
     "preview": "images/ab-clock.preview.jpg",
-    "webp": "images/ab-clock.webp",
+    "webp": null,
     "width": 2880,
     "height": 1200,
     "format": "jpg",
@@ -47,7 +47,7 @@
   "images/ab-group.jpg": {
     "original": "images/ab-group.jpg",
     "preview": "images/ab-group.preview.jpg",
-    "webp": "images/ab-group.webp",
+    "webp": null,
     "width": 3840,
     "height": 2304,
     "format": "jpg",
@@ -56,7 +56,7 @@
   "images/ab-poker.jpg": {
     "original": "images/ab-poker.jpg",
     "preview": "images/ab-poker.preview.jpg",
-    "webp": "images/ab-poker.webp",
+    "webp": null,
     "width": 2880,
     "height": 1725,
     "format": "jpg",
@@ -65,7 +65,7 @@
   "images/ab-zodiac-1.jpg": {
     "original": "images/ab-zodiac-1.jpg",
     "preview": "images/ab-zodiac-1.preview.jpg",
-    "webp": "images/ab-zodiac-1.webp",
+    "webp": null,
     "width": 2800,
     "height": 2800,
     "format": "jpg",
@@ -83,7 +83,7 @@
   "images/about-photo.jpg": {
     "original": "images/about-photo.jpg",
     "preview": "images/about-photo.preview.jpg",
-    "webp": "images/about-photo.webp",
+    "webp": null,
     "width": 1440,
     "height": 1440,
     "format": "jpg",
@@ -92,7 +92,7 @@
   "images/about-selfie.jpg": {
     "original": "images/about-selfie.jpg",
     "preview": "images/about-selfie.preview.jpg",
-    "webp": "images/about-selfie.webp",
+    "webp": null,
     "width": 2000,
     "height": 1600,
     "format": "jpg",
@@ -110,7 +110,7 @@
   "images/cc-1.jpg": {
     "original": "images/cc-1.jpg",
     "preview": "images/cc-1.preview.jpg",
-    "webp": "images/cc-1.webp",
+    "webp": null,
     "width": 2400,
     "height": 800,
     "format": "jpg",
@@ -119,7 +119,7 @@
   "images/cc-2.jpg": {
     "original": "images/cc-2.jpg",
     "preview": "images/cc-2.preview.jpg",
-    "webp": "images/cc-2.webp",
+    "webp": null,
     "width": 2400,
     "height": 800,
     "format": "jpg",
@@ -128,7 +128,7 @@
   "images/cc-3.jpg": {
     "original": "images/cc-3.jpg",
     "preview": "images/cc-3.preview.jpg",
-    "webp": "images/cc-3.webp",
+    "webp": null,
     "width": 2400,
     "height": 800,
     "format": "jpg",
@@ -137,7 +137,7 @@
   "images/cc-web.jpg": {
     "original": "images/cc-web.jpg",
     "preview": "images/cc-web.preview.jpg",
-    "webp": "images/cc-web.webp",
+    "webp": null,
     "width": 2400,
     "height": 1334,
     "format": "jpg",
@@ -146,7 +146,7 @@
   "images/cd-1st-store.jpg": {
     "original": "images/cd-1st-store.jpg",
     "preview": "images/cd-1st-store.preview.jpg",
-    "webp": "images/cd-1st-store.webp",
+    "webp": null,
     "width": 3200,
     "height": 1800,
     "format": "jpg",
@@ -155,7 +155,7 @@
   "images/cd-ai-1.jpg": {
     "original": "images/cd-ai-1.jpg",
     "preview": "images/cd-ai-1.preview.jpg",
-    "webp": "images/cd-ai-1.webp",
+    "webp": null,
     "width": 3480,
     "height": 1440,
     "format": "jpg",
@@ -164,7 +164,7 @@
   "images/cd-ai-2.jpg": {
     "original": "images/cd-ai-2.jpg",
     "preview": "images/cd-ai-2.preview.jpg",
-    "webp": "images/cd-ai-2.webp",
+    "webp": null,
     "width": 3200,
     "height": 1800,
     "format": "jpg",
@@ -173,7 +173,7 @@
   "images/cd-ai-3.jpg": {
     "original": "images/cd-ai-3.jpg",
     "preview": "images/cd-ai-3.preview.jpg",
-    "webp": "images/cd-ai-3.webp",
+    "webp": null,
     "width": 3840,
     "height": 1280,
     "format": "jpg",
@@ -182,7 +182,7 @@
   "images/cd-app-0.jpg": {
     "original": "images/cd-app-0.jpg",
     "preview": "images/cd-app-0.preview.jpg",
-    "webp": "images/cd-app-0.webp",
+    "webp": null,
     "width": 3840,
     "height": 2000,
     "format": "jpg",
@@ -191,7 +191,7 @@
   "images/cd-app-1.jpg": {
     "original": "images/cd-app-1.jpg",
     "preview": "images/cd-app-1.preview.jpg",
-    "webp": "images/cd-app-1.webp",
+    "webp": null,
     "width": 1980,
     "height": 1980,
     "format": "jpg",
@@ -209,7 +209,7 @@
   "images/cd-app-3.jpg": {
     "original": "images/cd-app-3.jpg",
     "preview": "images/cd-app-3.preview.jpg",
-    "webp": "images/cd-app-3.webp",
+    "webp": null,
     "width": 1980,
     "height": 1980,
     "format": "jpg",
@@ -299,7 +299,7 @@
   "images/cd-graphics-1.jpg": {
     "original": "images/cd-graphics-1.jpg",
     "preview": "images/cd-graphics-1.preview.jpg",
-    "webp": "images/cd-graphics-1.webp",
+    "webp": null,
     "width": 4500,
     "height": 1500,
     "format": "jpg",
@@ -308,7 +308,7 @@
   "images/cd-graphics-2.jpg": {
     "original": "images/cd-graphics-2.jpg",
     "preview": "images/cd-graphics-2.preview.jpg",
-    "webp": "images/cd-graphics-2.webp",
+    "webp": null,
     "width": 3000,
     "height": 1000,
     "format": "jpg",
@@ -317,7 +317,7 @@
   "images/cd-hero-design-after.jpg": {
     "original": "images/cd-hero-design-after.jpg",
     "preview": "images/cd-hero-design-after.preview.jpg",
-    "webp": "images/cd-hero-design-after.webp",
+    "webp": null,
     "width": 3375,
     "height": 2250,
     "format": "jpg",
@@ -326,7 +326,7 @@
   "images/cd-hero-design-before.jpg": {
     "original": "images/cd-hero-design-before.jpg",
     "preview": "images/cd-hero-design-before.preview.jpg",
-    "webp": "images/cd-hero-design-before.webp",
+    "webp": null,
     "width": 3375,
     "height": 2250,
     "format": "jpg",
@@ -335,7 +335,7 @@
   "images/cd-home-all.jpg": {
     "original": "images/cd-home-all.jpg",
     "preview": "images/cd-home-all.preview.jpg",
-    "webp": "images/cd-home-all.webp",
+    "webp": null,
     "width": 800,
     "height": 1280,
     "format": "jpg",
@@ -362,7 +362,7 @@
   "images/cd-nyc-store.jpg": {
     "original": "images/cd-nyc-store.jpg",
     "preview": "images/cd-nyc-store.preview.jpg",
-    "webp": "images/cd-nyc-store.webp",
+    "webp": null,
     "width": 3840,
     "height": 1712,
     "format": "jpg",
@@ -371,7 +371,7 @@
   "images/cd-styles.jpg": {
     "original": "images/cd-styles.jpg",
     "preview": "images/cd-styles.preview.jpg",
-    "webp": "images/cd-styles.webp",
+    "webp": null,
     "width": 3840,
     "height": 2160,
     "format": "jpg",
@@ -380,7 +380,7 @@
   "images/cd-v3-1.jpg": {
     "original": "images/cd-v3-1.jpg",
     "preview": "images/cd-v3-1.preview.jpg",
-    "webp": "images/cd-v3-1.webp",
+    "webp": null,
     "width": 4150,
     "height": 2160,
     "format": "jpg",
@@ -389,7 +389,7 @@
   "images/cd-v3-2.jpg": {
     "original": "images/cd-v3-2.jpg",
     "preview": "images/cd-v3-2.preview.jpg",
-    "webp": "images/cd-v3-2.webp",
+    "webp": null,
     "width": 4150,
     "height": 2160,
     "format": "jpg",
@@ -425,7 +425,7 @@
   "images/ij-s-1.jpg": {
     "original": "images/ij-s-1.jpg",
     "preview": "images/ij-s-1.preview.jpg",
-    "webp": "images/ij-s-1.webp",
+    "webp": null,
     "width": 1600,
     "height": 1600,
     "format": "jpg",
@@ -434,7 +434,7 @@
   "images/ij-s-2.jpg": {
     "original": "images/ij-s-2.jpg",
     "preview": "images/ij-s-2.preview.jpg",
-    "webp": "images/ij-s-2.webp",
+    "webp": null,
     "width": 1600,
     "height": 1600,
     "format": "jpg",
@@ -470,7 +470,7 @@
   "images/le-cover.jpg": {
     "original": "images/le-cover.jpg",
     "preview": "images/le-cover.preview.jpg",
-    "webp": "images/le-cover.webp",
+    "webp": null,
     "width": 3840,
     "height": 1200,
     "format": "jpg",
@@ -488,7 +488,7 @@
   "images/le-keynote.jpg": {
     "original": "images/le-keynote.jpg",
     "preview": "images/le-keynote.preview.jpg",
-    "webp": "images/le-keynote.webp",
+    "webp": null,
     "width": 3840,
     "height": 2160,
     "format": "jpg",
@@ -497,7 +497,7 @@
   "images/le-s-1.jpg": {
     "original": "images/le-s-1.jpg",
     "preview": "images/le-s-1.preview.jpg",
-    "webp": "images/le-s-1.webp",
+    "webp": null,
     "width": 1920,
     "height": 1482,
     "format": "jpg",
@@ -506,7 +506,7 @@
   "images/le-s-2.jpg": {
     "original": "images/le-s-2.jpg",
     "preview": "images/le-s-2.preview.jpg",
-    "webp": "images/le-s-2.webp",
+    "webp": null,
     "width": 1920,
     "height": 1536,
     "format": "jpg",
@@ -524,7 +524,7 @@
   "images/le-s-4.jpg": {
     "original": "images/le-s-4.jpg",
     "preview": "images/le-s-4.preview.jpg",
-    "webp": "images/le-s-4.webp",
+    "webp": null,
     "width": 1920,
     "height": 1536,
     "format": "jpg",
@@ -533,7 +533,7 @@
   "images/le-ui.jpg": {
     "original": "images/le-ui.jpg",
     "preview": "images/le-ui.preview.jpg",
-    "webp": "images/le-ui.webp",
+    "webp": null,
     "width": 3840,
     "height": 700,
     "format": "jpg",
@@ -560,7 +560,7 @@
   "images/ourden-event-1.jpg": {
     "original": "images/ourden-event-1.jpg",
     "preview": "images/ourden-event-1.preview.jpg",
-    "webp": "images/ourden-event-1.webp",
+    "webp": null,
     "width": 3840,
     "height": 1360,
     "format": "jpg",
@@ -569,7 +569,7 @@
   "images/ourden-event-2.jpg": {
     "original": "images/ourden-event-2.jpg",
     "preview": "images/ourden-event-2.preview.jpg",
-    "webp": "images/ourden-event-2.webp",
+    "webp": null,
     "width": 3840,
     "height": 1360,
     "format": "jpg",
@@ -578,7 +578,7 @@
   "images/ourden-event-3.jpg": {
     "original": "images/ourden-event-3.jpg",
     "preview": "images/ourden-event-3.preview.jpg",
-    "webp": "images/ourden-event-3.webp",
+    "webp": null,
     "width": 3840,
     "height": 1360,
     "format": "jpg",
@@ -587,7 +587,7 @@
   "images/ourden-event-4.jpg": {
     "original": "images/ourden-event-4.jpg",
     "preview": "images/ourden-event-4.preview.jpg",
-    "webp": "images/ourden-event-4.webp",
+    "webp": null,
     "width": 3840,
     "height": 800,
     "format": "jpg",
@@ -605,7 +605,7 @@
   "images/ourden-web-1.jpg": {
     "original": "images/ourden-web-1.jpg",
     "preview": "images/ourden-web-1.preview.jpg",
-    "webp": "images/ourden-web-1.webp",
+    "webp": null,
     "width": 1920,
     "height": 2741,
     "format": "jpg",
@@ -614,7 +614,7 @@
   "images/ourden-web-2.jpg": {
     "original": "images/ourden-web-2.jpg",
     "preview": "images/ourden-web-2.preview.jpg",
-    "webp": "images/ourden-web-2.webp",
+    "webp": null,
     "width": 1920,
     "height": 2741,
     "format": "jpg",
@@ -632,7 +632,7 @@
   "images/rr-cover.jpg": {
     "original": "images/rr-cover.jpg",
     "preview": "images/rr-cover.preview.jpg",
-    "webp": "images/rr-cover.webp",
+    "webp": null,
     "width": 2880,
     "height": 1620,
     "format": "jpg",
@@ -650,7 +650,7 @@
   "images/rr-ui-1.jpg": {
     "original": "images/rr-ui-1.jpg",
     "preview": "images/rr-ui-1.preview.jpg",
-    "webp": "images/rr-ui-1.webp",
+    "webp": null,
     "width": 3840,
     "height": 1544,
     "format": "jpg",
@@ -686,7 +686,7 @@
   "images/rr-ui-s-1.jpg": {
     "original": "images/rr-ui-s-1.jpg",
     "preview": "images/rr-ui-s-1.preview.jpg",
-    "webp": "images/rr-ui-s-1.webp",
+    "webp": null,
     "width": 2400,
     "height": 2400,
     "format": "jpg",
@@ -695,7 +695,7 @@
   "images/rr-ui-s-2.jpg": {
     "original": "images/rr-ui-s-2.jpg",
     "preview": "images/rr-ui-s-2.preview.jpg",
-    "webp": "images/rr-ui-s-2.webp",
+    "webp": null,
     "width": 2400,
     "height": 2091,
     "format": "jpg",
@@ -704,7 +704,7 @@
   "images/rr-web.jpg": {
     "original": "images/rr-web.jpg",
     "preview": "images/rr-web.preview.jpg",
-    "webp": "images/rr-web.webp",
+    "webp": null,
     "width": 3840,
     "height": 2080,
     "format": "jpg",
@@ -731,7 +731,7 @@
   "images/rtw-ui-0.jpg": {
     "original": "images/rtw-ui-0.jpg",
     "preview": "images/rtw-ui-0.preview.jpg",
-    "webp": "images/rtw-ui-0.webp",
+    "webp": null,
     "width": 3840,
     "height": 1374,
     "format": "jpg",
@@ -740,7 +740,7 @@
   "images/rtw-ui-1.jpg": {
     "original": "images/rtw-ui-1.jpg",
     "preview": "images/rtw-ui-1.preview.jpg",
-    "webp": "images/rtw-ui-1.webp",
+    "webp": null,
     "width": 3840,
     "height": 1851,
     "format": "jpg",
@@ -749,7 +749,7 @@
   "images/rtw-ui-2.jpg": {
     "original": "images/rtw-ui-2.jpg",
     "preview": "images/rtw-ui-2.preview.jpg",
-    "webp": "images/rtw-ui-2.webp",
+    "webp": null,
     "width": 3840,
     "height": 1851,
     "format": "jpg",
@@ -785,7 +785,7 @@
   "images/web3-bb-nyc.jpg": {
     "original": "images/web3-bb-nyc.jpg",
     "preview": "images/web3-bb-nyc.preview.jpg",
-    "webp": "images/web3-bb-nyc.webp",
+    "webp": null,
     "width": 2400,
     "height": 2063,
     "format": "jpg",
@@ -794,7 +794,7 @@
   "images/web3-bb-ui-1.jpg": {
     "original": "images/web3-bb-ui-1.jpg",
     "preview": "images/web3-bb-ui-1.preview.jpg",
-    "webp": "images/web3-bb-ui-1.webp",
+    "webp": null,
     "width": 2880,
     "height": 2388,
     "format": "jpg",
@@ -803,7 +803,7 @@
   "images/web3-bb-ui-2.jpg": {
     "original": "images/web3-bb-ui-2.jpg",
     "preview": "images/web3-bb-ui-2.preview.jpg",
-    "webp": "images/web3-bb-ui-2.webp",
+    "webp": null,
     "width": 2880,
     "height": 2132,
     "format": "jpg",
@@ -812,7 +812,7 @@
   "images/web3-lightyear.jpg": {
     "original": "images/web3-lightyear.jpg",
     "preview": "images/web3-lightyear.preview.jpg",
-    "webp": "images/web3-lightyear.webp",
+    "webp": null,
     "width": 2400,
     "height": 1419,
     "format": "jpg",
@@ -821,7 +821,7 @@
   "images/web3-metapoker.jpg": {
     "original": "images/web3-metapoker.jpg",
     "preview": "images/web3-metapoker.preview.jpg",
-    "webp": "images/web3-metapoker.webp",
+    "webp": null,
     "width": 2400,
     "height": 2134,
     "format": "jpg",
@@ -875,7 +875,7 @@
   "images/web3-sym-logo.jpg": {
     "original": "images/web3-sym-logo.jpg",
     "preview": "images/web3-sym-logo.preview.jpg",
-    "webp": "images/web3-sym-logo.webp",
+    "webp": null,
     "width": 3840,
     "height": 720,
     "format": "jpg",
@@ -893,7 +893,7 @@
   "images/web3-tc-chess.png": {
     "original": "images/web3-tc-chess.png",
     "preview": "images/web3-tc-chess.preview.png",
-    "webp": "images/web3-tc-chess.webp",
+    "webp": null,
     "width": 2400,
     "height": 1500,
     "format": "png",
@@ -920,7 +920,7 @@
   "images/web3-tc-ui-1.jpg": {
     "original": "images/web3-tc-ui-1.jpg",
     "preview": "images/web3-tc-ui-1.preview.jpg",
-    "webp": "images/web3-tc-ui-1.webp",
+    "webp": null,
     "width": 2400,
     "height": 2220,
     "format": "jpg",
@@ -938,7 +938,7 @@
   "images/yt-end.jpg": {
     "original": "images/yt-end.jpg",
     "preview": "images/yt-end.preview.jpg",
-    "webp": "images/yt-end.webp",
+    "webp": null,
     "width": 1640,
     "height": 800,
     "format": "jpg",
@@ -947,7 +947,7 @@
   "images/yt-m.jpg": {
     "original": "images/yt-m.jpg",
     "preview": "images/yt-m.preview.jpg",
-    "webp": "images/yt-m.webp",
+    "webp": null,
     "width": 3840,
     "height": 800,
     "format": "jpg",
@@ -956,7 +956,7 @@
   "images/yt-s-1.jpg": {
     "original": "images/yt-s-1.jpg",
     "preview": "images/yt-s-1.preview.jpg",
-    "webp": "images/yt-s-1.webp",
+    "webp": null,
     "width": 1920,
     "height": 1080,
     "format": "jpg",
