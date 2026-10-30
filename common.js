@@ -61,37 +61,44 @@ function promoteImage(image) {
   if (!finalSource) return;
 
   image.dataset.imageState = 'loading-final';
-  const preloader = new Image();
-  image._finalImagePreloader = preloader;
+  const showFinalImage = (source) => {
+    if (image.dataset.imageState === 'loaded') return;
 
-  preloader.onload = () => {
-    image.src = finalSource;
+    image.src = source;
     image.dataset.imageState = 'loaded';
     image.classList.remove('image-previewing');
     image.classList.add('image-loaded');
   };
 
-  preloader.onerror = () => {
-    const fallbackSource = image.dataset.imageFallbackSrc;
+  const loadFinalImage = (source, onError) => {
+    const preloader = new Image();
+    image._finalImagePreloader = preloader;
+
+    preloader.onload = () => {
+      showFinalImage(source);
+    };
+
+    preloader.onerror = onError;
+    preloader.src = source;
+
+    // 缓存命中时 load 事件可能已经错过，直接切换，避免预览图闪现。
+    if (preloader.complete && preloader.naturalWidth > 0) {
+      showFinalImage(source);
+    }
+  };
+
+  const fallbackSource = image.dataset.imageFallbackSrc;
+  const loadFallbackImage = () => {
     if (!fallbackSource || fallbackSource === finalSource) return;
 
     image.dataset.imageFinalSrc = fallbackSource;
     image.dataset.imageState = 'loading-final';
-    const fallbackPreloader = new Image();
-    image._finalImagePreloader = fallbackPreloader;
-    fallbackPreloader.onload = () => {
-      image.src = fallbackSource;
-      image.dataset.imageState = 'loaded';
-      image.classList.remove('image-previewing');
-      image.classList.add('image-loaded');
-    };
-    fallbackPreloader.onerror = () => {
+    loadFinalImage(fallbackSource, () => {
       image.dataset.imageState = 'error';
-    };
-    fallbackPreloader.src = fallbackSource;
+    });
   };
 
-  preloader.src = finalSource;
+  loadFinalImage(finalSource, loadFallbackImage);
 }
 
 function enhanceImage(image, manifest, index) {

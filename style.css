@@ -278,12 +278,41 @@ b {
   gap: 48px;
   align-items: center;
 }
-.two-columns p{
+.two-columns:not(.two-columns-paired) p{
   margin: auto 40px !important;
 }
 .two-columns img{
   max-height: 720px;
   object-fit: contain;
+}
+.two-columns-paired{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+.two-column-pair{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "image copy";
+  gap: 48px;
+  align-items: center;
+}
+.two-column-pair.reverse{
+  grid-template-areas: "copy image";
+}
+.two-column-pair img{
+  grid-area: image;
+}
+.two-column-copy{
+  grid-area: copy;
+  min-width: 0;
+  margin: auto 2.5vw;
+}
+.two-column-copy p{
+  margin: 0 !important;
+}
+.two-column-copy p + p{
+  margin-top: 24px !important;
 }
 .tag-detail{
   text-align: center !important;
@@ -309,14 +338,42 @@ b {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-.two-columns p{
+.two-columns-paired{
+  gap: 12px;
+}
+.two-column-pair,
+.two-column-pair.reverse{
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "image"
+    "copy";
+  gap: 0;
+}
+.two-columns:not(.two-columns-paired) p{
   margin: 24px auto !important;
+}
+.two-column-copy{
+  margin: auto !important;
 }
   #main{
     margin:4px 12px 48px 12px;
   }
   #main p{
-    margin:24px auto 24px auto;
+    margin: 24px 12px !important;
+    font-size: 1.15em;
+  }
+  #main :is(h1, h2, h3, h4, h5, h6){
+    margin-left:12px !important;
+    margin-right:12px !important;
+  }
+  #main ul{
+    margin: auto 12px !important;
+  }
+  #main ul :is(h1, h2, h3, h4, h5, h6){
+    margin:24px 0 12px -16px !important;
+  }
+  #main .date p {
+    margin: 8px 12px !important;
   }
 }
 @media (max-width: 500px) {
