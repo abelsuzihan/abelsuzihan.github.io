@@ -4,7 +4,6 @@ const currentPageDirectory = new URL('.', window.location.href);
 const sitePathPrefix = currentPageDirectory.pathname === siteRootUrl.pathname ? '' : '../';
 const validFilters = new Set(['all', 'ux', 'branding']);
 let imageManifestPromise;
-let imageObserver;
 
 function resolveSitePath(path) {
   return `${sitePathPrefix}${path}`;
@@ -95,25 +94,6 @@ function promoteImage(image) {
   preloader.src = finalSource;
 }
 
-function watchImage(image) {
-  if (!('IntersectionObserver' in window)) {
-    promoteImage(image);
-    return;
-  }
-
-  if (!imageObserver) {
-    imageObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        promoteImage(entry.target);
-        imageObserver.unobserve(entry.target);
-      });
-    }, { rootMargin: '300px 0px' });
-  }
-
-  imageObserver.observe(image);
-}
-
 function enhanceImage(image, manifest, index) {
   if (image.dataset.imageEnhanced === 'true' || image.closest('#header, #footer, #lightbox-overlay')) {
     return;
@@ -170,7 +150,8 @@ function enhanceImage(image, manifest, index) {
     promoteImage(image);
   });
 
-  watchImage(image);
+  // 按 DOM 顺序立即启动高清资源请求，交给浏览器自行调度带宽和连接。
+  promoteImage(image);
 }
 
 async function enhanceImages(root = document) {
