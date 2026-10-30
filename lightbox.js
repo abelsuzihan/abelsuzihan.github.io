@@ -2,6 +2,11 @@ const overlay = document.getElementById("lightbox-overlay");
 const lightboxImg = overlay.querySelector("img");
 const closeBtn = document.getElementById("lightbox-close");
 
+// body 有页面入场 transform；把灯箱提升到 html 下，确保 fixed 相对视口定位。
+if (overlay.parentNode !== document.documentElement) {
+  document.documentElement.appendChild(overlay);
+}
+
 // 判断是否启用 Lightbox（大于 600px 才启用）
 const enableLightbox = window.innerWidth > 600;
 

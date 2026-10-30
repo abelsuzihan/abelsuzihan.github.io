@@ -363,12 +363,14 @@ b {
   transition: background 300ms ease;
 }
 #lightbox-overlay.show {
-  background: rgba(240,240,240,0.7);
+  background: rgba(252,252,252,0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 #lightbox-overlay img {
   max-width: 90%;
   max-height: 90%;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
   transform: scale(0.8);
   opacity: 0;
   transition: transform 300ms ease, opacity 300ms ease;
