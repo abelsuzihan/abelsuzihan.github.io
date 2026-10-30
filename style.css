@@ -279,7 +279,7 @@ b {
   align-items: center;
 }
 .two-columns p{
-  margin: auto !important;
+  margin: auto 40px !important;
 }
 .two-columns img{
   max-height: 720px;
