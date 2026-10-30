@@ -336,7 +336,7 @@
     "original": "images/cd-home-all.jpg",
     "preview": "images/cd-home-all.preview.jpg",
     "webp": "images/cd-home-all.webp",
-    "width": 1600,
+    "width": 800,
     "height": 1280,
     "format": "jpg",
     "ignored": false
@@ -345,7 +345,7 @@
     "original": "images/cd-logo.png",
     "preview": null,
     "webp": null,
-    "width": 1600,
+    "width": 800,
     "height": 200,
     "format": "png",
     "ignored": true

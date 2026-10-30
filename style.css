@@ -254,6 +254,10 @@ b {
   width: 100%;
   max-width:800px !important;
 }
+.img-size-xs{
+  width: 100%;
+  max-width:400px !important;
+}
 .divider {
   border-top: 1px solid #f1f1f1;
   margin: 48px 24px 24px 24px;
@@ -275,7 +279,6 @@ b {
   align-items: center;
 }
 .two-columns p{
-  text-align: left;
   margin: auto !important;
 }
 .two-columns img{
@@ -306,6 +309,9 @@ b {
     grid-template-columns: 1fr;
     gap: 12px;
   }
+.two-columns p{
+  margin: 24px auto !important;
+}
   #main{
     margin:4px 12px 48px 12px;
   }
@@ -329,6 +335,9 @@ b {
   }
   .placeholder-header {
     min-height: 138px;
+  }
+  .btn-style {
+  font-size: 1.1em;
   }
   h1, h2{
     margin:24px 0 16px 0;
