@@ -11,14 +11,25 @@ if (overlay.parentNode !== document.documentElement) {
 const enableLightbox = window.innerWidth > 600;
 
 if (enableLightbox) {
-  document.querySelectorAll(".lightbox-img").forEach(img => {
+  const lightboxItems = Array.from(document.querySelectorAll(".lightbox-img"));
+  let currentIndex = -1;
+
+  function openLightbox(index) {
+    const img = lightboxItems[index];
+    if (!img) return;
+
+    if (window.promoteImage) window.promoteImage(img);
+    lightboxImg.src = img.dataset.imageFinalSrc || img.currentSrc || img.src || img.dataset.imageOriginal;
+    lightboxImg.onerror = () => {
+      const fallback = img.dataset.imageFallbackSrc || img.currentSrc || img.src || img.dataset.imageOriginal;
+      if (lightboxImg.src !== fallback) lightboxImg.src = fallback;
+    };
+    currentIndex = index;
+  }
+
+  lightboxItems.forEach((img, index) => {
     img.addEventListener("click", () => {
-      if (window.promoteImage) window.promoteImage(img);
-      lightboxImg.src = img.dataset.imageFinalSrc || img.currentSrc || img.src || img.dataset.imageOriginal;
-      lightboxImg.onerror = () => {
-        const fallback = img.dataset.imageFallbackSrc || img.currentSrc || img.src || img.dataset.imageOriginal;
-        if (lightboxImg.src !== fallback) lightboxImg.src = fallback;
-      };
+      openLightbox(index);
       overlay.style.display = "flex";
 
       // 强制触发 reflow 让动画生效
@@ -28,8 +39,16 @@ if (enableLightbox) {
     });
   });
 
+  function changeLightboxImage(step) {
+    if (lightboxItems.length < 2) return;
+
+    const nextIndex = (currentIndex + step + lightboxItems.length) % lightboxItems.length;
+    openLightbox(nextIndex);
+  }
+
   function closeLightbox() {
     overlay.classList.remove("show");
+    currentIndex = -1;
     setTimeout(() => {
       overlay.style.display = "none";
     }, 300);
@@ -39,6 +58,21 @@ if (enableLightbox) {
 
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!overlay.classList.contains("show")) return;
+
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      changeLightboxImage(-1);
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      changeLightboxImage(1);
+    } else if (e.key === "Escape") {
+      e.preventDefault();
       closeLightbox();
     }
   });

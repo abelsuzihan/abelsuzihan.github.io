@@ -30,6 +30,7 @@
 @media (max-width: 1200px) {
   .cider-v3-pair {
     grid-template-columns: 1fr;
+    padding: 0 20px;
   }
 }
 </style>
@@ -44,8 +45,8 @@
       Founded in 2020, <b>Cider</b> grew into a global fashion e-commerce brand for Gen Z shoppers. As the product scaled, our team worked across product strategy, UX, and visual design to bring the brand’s expressive character into an experience that still makes browsing and buying clear. We approached the app as more than a storefront: it needed to support discovery, merchandising, and the relationship with customers beyond checkout.
     </p>
  <div class="cider-v3-pair">
-      <img data-image-original="../images/cd-v3-1.jpg" width="4150" height="2160" />
-      <img data-image-original="../images/cd-v3-2.jpg" width="4150" height="2160" />
+      <img data-image-original="../images/cd-v3-1.jpg" class="lightbox-img" width="4150" height="2160" />
+      <img data-image-original="../images/cd-v3-2.jpg" class="lightbox-img" width="4150" height="2160" />
     </div>
     <h2>Four Evolutions, One Home Experience</h2>
     <p>Across four iterations, the home experience evolved to balance Cider’s visual expression with the merchandising team’s need to feature timely stories and customers’ need to find relevant products. The merchandising area became shorter, personalized content moved higher on the page, and modules grew more flexible. The most focused version centered on one video-led story, with a product grid leading directly into shopping.</p>
@@ -100,6 +101,13 @@
       <p>These trials let us test ideas earlier, from previewing patterns before samples existed to replacing backgrounds and exploring virtual try-on. We found the tools most useful when they shortened a specific feedback loop and left the team in control of the final result. That remains our standard for bringing new technology into content production and customer experience.</p>
     </div>
 <div data-site-include="footer"></div>
+<!-- lightbox -->
+<div id="lightbox-overlay">
+  <span id="lightbox-close">&times;</span>
+  <img src="">
+</div>
+<script src="../lightbox.js"></script>
+<!-- lightbox -->
   <script src="../common.js"></script>
   <script src="../detail.js"></script>
 </body>
